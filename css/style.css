@@ -1,0 +1,40 @@
+a.button {
+	min-width: 140px;
+	padding: 1.03125em 1em !important;
+}
+
+button.martell, .button.martell {
+    background-color: #C35F2E;
+    border-color: #B3461D;
+    color: white;
+}
+button.martell:hover, button.martell:focus, .button.martell:hover, .button.martell:focus {
+  background-color: #B3461D;
+}
+button.martell:hover, button.martell:focus, .button.martell:hover, .button.martell:focus {
+  color: white;
+}
+
+button.greyjoy, .button.greyjoy {
+	background-color: #292929;
+	border-color: #1A1A1A;
+	color: white;
+}
+button.greyjoy:hover, button.greyjoy:focus, .button.greyjoy:hover, .button.greyjoy:focus {
+  background-color: #1A1A1A;
+}
+button.greyjoy:hover, button.greyjoy:focus, .button.greyjoy:hover, .button.greyjoy:focus {
+  color: white;
+}
+
+button.baratheon, .button.baratheon {
+	background-color: #E6A71C;
+	border-color: #DF9C17;
+	color: white;
+}
+button.baratheon:hover, button.baratheon:focus, .button.baratheon:hover, .button.baratheon:focus {
+  background-color: #DF9C17;
+}
+button.baratheon:hover, button.baratheon:focus, .button.baratheon:hover, .button.baratheon:focus {
+  color: white;
+}
