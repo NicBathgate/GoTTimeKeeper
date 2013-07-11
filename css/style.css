@@ -1,6 +1,7 @@
 a.button {
 	min-width: 140px;
-	padding: 1.03125em 1em !important;
+	padding: 0.6em 1em !important;
+	opacity: 0.8;
 }
 
 .padding-top {
@@ -43,7 +44,21 @@ button.baratheon:hover, button.baratheon:focus, .button.baratheon:hover, .button
   color: white;
 }
 
+a.button span {
+	font-size: 14px;
+	font-weight: normal;
+}
+.time-label {
+	display: inline-block;
+	text-align: right !important;
+	width: 40px;
+	font-style: italic;
+	font-size: 12px !important;
+}
 
+.illuminate {
+	opacity: 1 !important;
+}
 
 
 * {margin: 0; padding: 0;}
