@@ -24,7 +24,9 @@ $(document).ready(function(){
 	interval_ids = new Array();
 
 	$(".button").click(function(event) {
-		var house = $(this).html().split('<br', 1);
+		var button_text = $(this).html().split('<br', 1);
+		var house = $.trim(button_text).toLowerCase();
+		var running_house;
 		var current = $(this).children('.current');
 		var total = $(this).children('.total');
 
@@ -33,23 +35,25 @@ $(document).ready(function(){
 		
 		// stop any other timer that is running first
 		for(key in interval_ids) {
-			//alert("key " + key + " has value " + interval_ids[key]);
+			// stop timer
 			clearInterval(interval_ids[key]);
+			// update total for any buttons that were running
+			if(interval_ids[key]){
+				var running_house = $.trim(key).toLowerCase();
+				var _btn = $(".button." + running_house);
+				var _current = $(".current." + running_house);
+				var _total = $(".total." + running_house);
+
+				var new_total = Math.floor(get_seconds(_current.text())) + Math.floor(get_seconds(_total.text()));
+				_total.text(get_elapsed_time_string(new_total));
+
+				_btn.removeClass("active");
+			}
 			interval_ids[key] = false;
-
-			var _house = $.trim(key).toLowerCase();
-			var _btn = $(".button ." + _house);
-			var _current = $(".current ." + _house);
-			var _total = $(".total ." + _house);
-
-			var new_total = Math.floor(get_seconds(_current.text())) + Math.floor(get_seconds(_total.text()));
-			_total.text(get_elapsed_time_string(new_total));
-
-			_btn.removeClass("active");
 		}
 
 		// start the timer that was clicked IF not already running
-		if(!interval_ids[house]) {
+		if(!interval_ids[house] && house != running_house) {
 			$(this).addClass("active");
 
 			interval_ids[house] = setInterval(function() {
