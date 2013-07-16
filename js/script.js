@@ -1,26 +1,11 @@
 $(document).ready(function(){
+	// initialize houses page to be hidden
+	$(".houses").hide();
 
-	var _StopWatch = new StopWatch();
+	$(".gamelink").click(toggle_tabs);
+	$(".houselink").click(toggle_tabs);
 
-	var c_baratheon = get_seconds($('.current .baratheon').text());
-	var t_baratheon = get_seconds($('.total .baratheon').text());
-	var c_stark = get_seconds($('.current .stark').text());
-	var t_stark = get_seconds($('.total .stark').text());
-	var c_lannister = get_seconds($('.current .lannister').text());
-	var t_lannister = get_seconds($('.total .lannister').text());
-	var c_martell = get_seconds($('.current .martell').text());
-	var t_martell = get_seconds($('.total .martell').text());
-	var c_tyrell = get_seconds($('.current .tyrell').text());
-	var t_tyrell = get_seconds($('.total .tyrell').text());
-	var c_greyjoy = get_seconds($('.current .greyjoy').text());
-	var t_greyjoy = get_seconds($('.total .greyjoy').text());
 	var elapsed = [];
-	elapsed['baratheon'] = (t_baratheon > 0) ? t_baratheon : 0;
-	elapsed['stark'] = (t_stark > 0) ? t_stark : 0;
-	elapsed['lannister'] = (t_lannister > 0) ? t_lannister : 0;
-	elapsed['martell'] = (t_martell > 0) ? t_martell : 0;
-	elapsed['tyrell'] = (t_tyrell > 0) ? t_tyrell : 0;
-	elapsed['greyjoy'] = (t_greyjoy > 0) ? t_greyjoy : 0;
 	interval_ids = new Array();
 
 	$(".button").click(function(event) {
@@ -29,7 +14,6 @@ $(document).ready(function(){
 		var running_house;
 		var current = $(this).children('.current');
 		var total = $(this).children('.total');
-
 		var seconds = get_seconds($('.stopwatch').text());
 		elapsed[house] = (seconds > 0) ? seconds : 0;
 		
@@ -43,7 +27,6 @@ $(document).ready(function(){
 				var _btn = $(".button." + running_house);
 				var _current = $(".current." + running_house);
 				var _total = $(".total." + running_house);
-
 				var new_total = Math.floor(get_seconds(_current.text())) + Math.floor(get_seconds(_total.text()));
 				_total.text(get_elapsed_time_string(new_total));
 
@@ -64,7 +47,14 @@ $(document).ready(function(){
 
 	});
 
-
+	
+	// switch between houses and game tabs
+	function toggle_tabs(){
+		$(".game").toggle();
+		$(".houses").toggle();
+		$('.gamelink').parent('dd').toggleClass('active');
+		$('.houselink').parent('dd').toggleClass('active');
+	}
 
 	// Convert seconds into timecode for display
 	function get_elapsed_time_string(total_seconds) {
@@ -95,7 +85,29 @@ $(document).ready(function(){
 	// Convert display timecode into seconds
 	function get_seconds(elapsed_time_string) {
 		var time_a = String(elapsed_time_string).split(':');
-		return time_a[0]*60*60 + time_a[1]*60 + time_a[2];
+		return parseInt(time_a[0]*60*60) + parseInt(time_a[1]*60) + parseInt(time_a[2]);
 	}
 
 });
+
+/*
+	elapsed['baratheon'] = (t_baratheon > 0) ? t_baratheon : 0;
+	elapsed['stark'] = (t_stark > 0) ? t_stark : 0;
+	elapsed['lannister'] = (t_lannister > 0) ? t_lannister : 0;
+	elapsed['martell'] = (t_martell > 0) ? t_martell : 0;
+	elapsed['tyrell'] = (t_tyrell > 0) ? t_tyrell : 0;
+	elapsed['greyjoy'] = (t_greyjoy > 0) ? t_greyjoy : 0;
+	var _StopWatch = new StopWatch();
+	var c_baratheon = get_seconds($('.current .baratheon').text());
+	var t_baratheon = get_seconds($('.total .baratheon').text());
+	var c_stark = get_seconds($('.current .stark').text());
+	var t_stark = get_seconds($('.total .stark').text());
+	var c_lannister = get_seconds($('.current .lannister').text());
+	var t_lannister = get_seconds($('.total .lannister').text());
+	var c_martell = get_seconds($('.current .martell').text());
+	var t_martell = get_seconds($('.total .martell').text());
+	var c_tyrell = get_seconds($('.current .tyrell').text());
+	var t_tyrell = get_seconds($('.total .tyrell').text());
+	var c_greyjoy = get_seconds($('.current .greyjoy').text());
+	var t_greyjoy = get_seconds($('.total .greyjoy').text());
+*/
