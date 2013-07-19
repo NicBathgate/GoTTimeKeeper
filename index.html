@@ -13,14 +13,6 @@
 	<script src="js/script.js"></script>
 </head>
 <body>
-<ul>
-	<li>Use touch events</li>
-	<li>Use Aidan's timers</li>
-	<li>Make timers full size</li>
-	<li>Use House flags</li>
-	<li>Make currently active timer grow</li>
-	<li>Make button states clearer</li>
-</ul>
 <!-- Tabs -->
 <div class="row text-center">
 
@@ -32,7 +24,6 @@
 	</div>
 </div>
 
-
 <!-- Game Buttons -->
 <div class="row text-center game">
 	<div class="row text-center">
@@ -40,14 +31,14 @@
 		<div class="small-2 columns"><h4>I</h4></div>
 		<div class="small-5 columns"><hr /></div>
 		<div class="small-6 columns">
-			<p><a href="#" class="large supply button">
+			<p><a href="#" class="large supply button btn">
 				Supply<br />
 				<span class="time-label">current</span> <span class="current supply">00:00:00</span><br />
 				<span class="time-label">total</span> <span class="total supply">00:00:00</span>
 			</a></p>
 		</div>
 		<div class="small-6 columns">
-			<p><a href="#" class="large mustering button">
+			<p><a href="#" class="large mustering button btn">
 				Mustering<br />
 				<span class="time-label">current</span> <span class="current mustering">00:00:00</span><br />
 				<span class="time-label">total</span> <span class="total mustering">00:00:00</span>
@@ -59,14 +50,14 @@
 		<div class="small-2 columns"><h4>II</h4></div>
 		<div class="small-5 columns"><hr /></div>
 		<div class="small-6 columns">
-			<p><a href="#" class="large consolidate button">
+			<p><a href="#" class="large consolidate button btn">
 				Consolidate<br />
 				<span class="time-label">current</span> <span class="current consolidate">00:00:00</span><br />
 				<span class="time-label">total</span> <span class="total consolidate">00:00:00</span>
 			</a></p>
 		</div>
 		<div class="small-6 columns">
-			<p><a href="#" class="large bidding button">
+			<p><a href="#" class="large bidding button btn">
 				Bidding<br />
 				<span class="time-label">current</span> <span class="current bidding">00:00:00</span><br />
 				<span class="time-label">total</span> <span class="total bidding">00:00:00</span>
@@ -78,14 +69,14 @@
 		<div class="small-2 columns"><h4>III</h4></div>
 		<div class="small-5 columns"><hr /></div>
 		<div class="small-6 columns">
-			<p><a href="#" class="large wildlings button">
+			<p><a href="#" class="large wildlings button btn">
 				Wildlings<br />
 				<span class="time-label">current</span> <span class="current wildlings">00:00:00</span><br />
 				<span class="time-label">total</span> <span class="total wildlings">00:00:00</span>
 			</a></p>
 		</div>
 		<div class="small-6 columns">
-			<p><a href="#" class="large placing button">
+			<p><a href="#" class="large placing button btn">
 				Placing<br />
 				<span class="time-label">current</span> <span class="current placing">00:00:00</span><br />
 				<span class="time-label">total</span> <span class="total placing">00:00:00</span>
@@ -96,41 +87,44 @@
 
 
 <!-- House Buttons -->
-<div class="row text-center houses">
-	<div class="small-6 columns">
-		<p><a href="#" class="large baratheon button">
-			Baratheon<br />
-			<span class="time-label">current</span> <span class="current baratheon">00:00:00</span><br />
-			<span class="time-label">total</span> <span class="total baratheon">00:00:00</span>
-		</a></p>
-		<p><a href="#" class="large stark button">
-			Stark<br />
-			<span class="time-label">current</span> <span class="current stark">00:00:00</span><br />
-			<span class="time-label">total</span> <span class="total stark">00:00:00</span>
-		</a></p>
-		<p><a href="#" class="large lannister button">
-			Lannister<br />
-			<span class="time-label">current</span> <span class="current lannister">00:00:00</span><br />
-			<span class="time-label">total</span> <span class="total lannister">00:00:00</span>
-		</a></p>
-	</div>
-	<div class="small-6 columns">
-		<p><a href="#" class="large martell button">
-			Martell<br />
-			<span class="time-label">current</span> <span class="current martell">00:00:00</span><br />
-			<span class="time-label">total</span> <span class="total martell">00:00:00</span>
-		</a></p>
-		<p><a href="#" class="large tyrell button">
-			Tyrell<br />
-			<span class="time-label">current</span> <span class="current tyrell">00:00:00</span><br />
-			<span class="time-label">total</span> <span class="total tyrell">00:00:00</span>
-		</a></p>
-		<p><a href="#" class="large greyjoy button">
-			Greyjoy<br />
-			<span class="time-label">current</span> <span class="current greyjoy">00:00:00</span><br />
-			<span class="time-label">total</span> <span class="total greyjoy">00:00:00</span>
-		</a></p>
-	</div>
+<div class="houses" style="width:382px; height:500px; margin: 0 auto;">
+
+	<button class="btn tyrell" style="float:left; margin-right:2px;">
+		Tyrell<br />
+		<span class="time-label">current</span> <span class="current tyrell">00:00:00</span><br />
+		<span class="time-label">total</span> <span class="total tyrell">00:00:00</span>
+	</button>
+
+	<button class="btn martell" style="float:right;">
+		Martell<br />
+		<span class="time-label">current</span> <span class="current martell">00:00:00</span><br />
+		<span class="time-label">total</span> <span class="total martell">00:00:00</span>
+	</button>
+
+	<button class="btn greyjoy" style="float:left; margin-right:2px;">
+		Greyjoy<br />
+		<span class="time-label">current</span> <span class="current greyjoy">00:00:00</span><br />
+		<span class="time-label">total</span> <span class="total greyjoy">00:00:00</span>
+	</button>
+
+	<button class="btn stark" style="float:right;">
+		Stark<br />
+		<span class="time-label">current</span> <span class="current stark">00:00:00</span><br />
+		<span class="time-label">total</span> <span class="total stark">00:00:00</span>
+	</button>
+
+	<button class="btn baratheon" style="float:left; margin-right:2px;">
+		Baratheon<br />
+		<span class="time-label">current</span> <span class="current baratheon">00:00:00</span><br />
+		<span class="time-label">total</span> <span class="total baratheon">00:00:00</span>
+	</button>
+
+	<button class="btn lannister" style="float:right;">
+		Lannister<br />
+		<span class="time-label">current</span> <span class="current lannister">00:00:00</span><br />
+		<span class="time-label">total</span> <span class="total lannister">00:00:00</span>
+	</button>
+	
 </div>
 
   <script>

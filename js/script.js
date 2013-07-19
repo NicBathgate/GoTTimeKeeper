@@ -2,13 +2,14 @@ $(document).ready(function(){
 	// initialize houses page to be hidden
 	$(".houses").hide();
 
-	$(".gamelink").click(toggle_tabs);
-	$(".houselink").click(toggle_tabs);
+	$(".gamelink").bind('touchstart click', toggle_tabs);
+	$(".houselink").bind('touchstart click', toggle_tabs);
 
 	var elapsed = [];
 	interval_ids = new Array();
 
-	$(".button").click(function(event) {
+	$(".btn").bind('touchstart click', function(event) {
+		event.stopPropagation(); event.preventDefault();
 		var button_text = $(this).html().split('<br', 1);
 		var house = $.trim(button_text).toLowerCase();
 		var running_house;
@@ -24,7 +25,7 @@ $(document).ready(function(){
 			// update total for any buttons that were running
 			if(interval_ids[key]){
 				var running_house = $.trim(key).toLowerCase();
-				var _btn = $(".button." + running_house);
+				var _btn = $(".btn." + running_house);
 				var _current = $(".current." + running_house);
 				var _total = $(".total." + running_house);
 				var new_total = Math.floor(get_seconds(_current.text())) + Math.floor(get_seconds(_total.text()));
@@ -47,9 +48,10 @@ $(document).ready(function(){
 
 	});
 
-	
+
 	// switch between houses and game tabs
-	function toggle_tabs(){
+	function toggle_tabs(e){
+		e.stopPropagation(); e.preventDefault();
 		$(".game").toggle();
 		$(".houses").toggle();
 		$('.gamelink').parent('dd').toggleClass('active');

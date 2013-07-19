@@ -5,19 +5,48 @@ h4 {
 	margin-bottom: 0;
 }
 
+.button.large {
+	font-size: 16px;
+	font-weight: normal;
+}
 a.button {
-	min-width: 140px;
-	padding: 0.6em 1em !important;
+	min-width: 170px;
+	min-height: 100px;
+	padding: 1.4em 1em !important;
 }
 
 .padding-top {
 	padding-top: 1em;
 }
 
+button {
+	width: 190px;
+	height: 160px;
+	display: block;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+
+button.baratheon { 		background-image: url('../img/tiles/Baratheon.jpg'); }
+button.baratheon:hover { 	background-image: url('../img/tiles/Baratheon-rollover.jpg'); }
+button.lannister { 		background-image: url('../img/tiles/Lannister.jpg'); }
+button.lannister:hover { 	background-image: url('../img/tiles/Lannister-rollover.jpg'); }
+button.stark { 		background-image: url('../img/tiles/Stark.jpg'); }
+button.stark:hover { 	background-image: url('../img/tiles/Stark-rollover.jpg'); }
+button.greyjoy { 		background-image: url('../img/tiles/Greyjoy.jpg'); }
+button.greyjoy:hover { 	background-image: url('../img/tiles/Greyjoy-rollover.jpg'); }
+button.martell { 		background-image: url('../img/tiles/Martell.jpg'); }
+button.martell:hover { 	background-image: url('../img/tiles/Martell-rollover.jpg'); }
+button.tyrell { 		background-image: url('../img/tiles/Tyrell.jpg'); }
+button.tyrell:hover { 	background-image: url('../img/tiles/Tyrell-rollover.jpg'); }
+
 button.martell, .button.martell, button.supply, .button.supply {
     background-color: #C35F2E;
-    border-color: #B3461D;
-    color: white;
+    border: none;
+    color: black;
 }
 button.martell:hover, button.martell:focus, .button.martell:hover, .button.martell:focus, .button.martell.active,
 button.supply:hover, button.supply:focus, .button.supply:hover, .button.supply:focus, .button.supply.active {	
@@ -25,12 +54,12 @@ button.supply:hover, button.supply:focus, .button.supply:hover, .button.supply:f
 }
 button.martell:hover, button.martell:focus, .button.martell:hover, .button.martell:focus, .button.martell.active,
 button.supply:hover, button.supply:focus, .button.supply:hover, .button.supply:focus, .button.supply.active {
-	color: white;
+	color: black;
 }
 
 button.greyjoy, .button.greyjoy, button.placing, .button.placing {
 	background-color: #333;
-	border-color: #111;
+	border: none;
 	color: white;
 }
 button.greyjoy:hover, button.greyjoy:focus, .button.greyjoy:hover, .button.greyjoy:focus, .button.greyjoy.active,
@@ -44,8 +73,8 @@ button.placing:hover, button.placing:focus, .button.placing:hover, .button.placi
 
 button.baratheon, .button.baratheon, button.consolidate, .button.consolidate {
 	background-color: #E6A71C;
-	border-color: #C27501;/*#DF9C17;*/
-	color: white;
+	border: none;/*#DF9C17;*/
+	color: black;
 }
 button.baratheon:hover, button.baratheon:focus, .button.baratheon:hover, .button.baratheon:focus, .button.baratheon.active,
 button.consolidate:hover, button.consolidate:focus, .button.consolidate:hover, .button.consolidate:focus, .button.consolidate.active {
@@ -53,13 +82,13 @@ button.consolidate:hover, button.consolidate:focus, .button.consolidate:hover, .
 }
 button.baratheon:hover, button.baratheon:focus, .button.baratheon:hover, .button.baratheon:focus, .button.baratheon.active,
 button.consolidate:hover, button.consolidate:focus, .button.consolidate:hover, .button.consolidate:focus, .button.consolidate.active {
-	color: white;
+	color: black;
 }
 
 button.stark, .button.stark, button.wildlings, .button.wildlings {
 	background-color: #e9e9e9;
-	border-color: #d0d0d0;
-	color: #333333;
+	border: none;
+	color: #111111;
 }
 button.stark:hover, button.stark:focus, .button.stark:hover, .button.stark:focus, .button.stark.active,
 button.wildlings:hover, button.wildlings:focus, .button.wildlings:hover, .button.wildlings:focus, .button.wildlings.active {
@@ -67,12 +96,12 @@ button.wildlings:hover, button.wildlings:focus, .button.wildlings:hover, .button
 }
 button.stark:hover, button.stark:focus, .button.stark:hover, .button.stark:focus, .button.stark.active,
 button.wildlings:hover, button.wildlings:focus, .button.wildlings:hover, .button.wildlings:focus, .button.wildlings.active {
-  color: #333333;
+  color: #111111;
 }
 
 button.tyrell, .button.tyrell, button.mustering, .button.mustering {
 	background-color: #5da423;
-	border-color: #457a1a;
+	border: none;
 	color: white;
 }
 button.tyrell:hover, button.tyrell:focus, .button.tyrell:hover, .button.tyrell:focus, .button.tyrell.active,
@@ -86,7 +115,7 @@ button.mustering:hover, button.mustering:focus, .button.mustering:hover, .button
 
 button.lannister, .button.lannister, button.bidding, .button.bidding {
 	background-color: #c60f13;
-	border-color: #951919; /*#970b0e;*/
+	border: none; /*#970b0e;*/
 	color: white;
 }
 button.lannister:hover, button.lannister:focus, .button.lannister:hover, .button.lannister:focus, .button.lannister.active,
@@ -100,10 +129,17 @@ button.bidding:hover, button.bidding:focus, .button.bidding:hover, .button.biddi
 
 .active .current {
 	font-weight: bold;
+	font-size: 24px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
 }
 
-
-a.button span {
+button {
+	margin: 2px 0 0 0;
+}
+button span {
 	font-size: 14px;
 	font-weight: normal;
 }
