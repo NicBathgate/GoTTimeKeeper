@@ -2,13 +2,13 @@ $(document).ready(function(){
 	// initialize houses page to be hidden
 	$(".houses").hide();
 
-	$(".gamelink").bind('touchstart click', toggle_tabs);
-	$(".houselink").bind('touchstart click', toggle_tabs);
+	$(".gamelink").bind('tap click', toggle_tabs);
+	$(".houselink").bind('tap click', toggle_tabs);
 
 	var elapsed = [];
 	interval_ids = new Array();
 
-	$(".btn").bind('touchstart click', function(event) {
+	$(".btn").bind('tap click', function(event) {
 		event.stopImmediatePropagation(); event.preventDefault();
 		var button_text = $(this).html().split('<br', 1);
 		var house = $.trim(button_text).toLowerCase();
