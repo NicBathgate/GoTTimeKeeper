@@ -9,7 +9,7 @@ $(document).ready(function(){
 	interval_ids = new Array();
 
 	$(".btn").bind('touchstart click', function(event) {
-		event.stopPropagation(); event.preventDefault();
+		event.stopImmediatePropagation(); event.preventDefault();
 		var button_text = $(this).html().split('<br', 1);
 		var house = $.trim(button_text).toLowerCase();
 		var running_house;
@@ -51,7 +51,7 @@ $(document).ready(function(){
 
 	// switch between houses and game tabs
 	function toggle_tabs(e){
-		e.stopPropagation(); e.preventDefault();
+		e.stopImmediatePropagation(); e.preventDefault();
 		$(".game").toggle();
 		$(".houses").toggle();
 		$('.gamelink').parent('dd').toggleClass('active');
