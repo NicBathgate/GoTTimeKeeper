@@ -2,13 +2,13 @@ $(document).ready(function(){
 	// initialize houses page to be hidden
 	$(".houses").hide();
 
-	$(".gamelink").bind('tap', toggle_tabs);
-	$(".houselink").bind('tap', toggle_tabs);
+	$(".gamelink").bind('touchstart', toggle_tabs);
+	$(".houselink").bind('touchstart', toggle_tabs);
 
 	var elapsed = [];
 	interval_ids = new Array();
 
-	$(".btn").bind('tap', function(event) {
+	$(".btn").bind('touchstart', function(event) {
 		event.stopImmediatePropagation(); event.preventDefault();
 		var button_text = $(this).html().split('<br', 1);
 		var house = $.trim(button_text).toLowerCase();
@@ -30,6 +30,7 @@ $(document).ready(function(){
 				var _total = $(".total." + running_house);
 				var new_total = Math.floor(get_seconds(_current.text())) + Math.floor(get_seconds(_total.text()));
 				_total.text(get_elapsed_time_string(new_total));
+				update_game_total();
 
 				_btn.removeClass("active");
 			}
@@ -47,6 +48,15 @@ $(document).ready(function(){
 		}
 
 	});
+
+	function update_game_total(){
+		var total = 0;
+		$(".btn").children('.total').each(function() {
+			//alert(get_seconds($(this).text()));
+  			total += parseInt(get_seconds($(this).text()));
+		});
+		$(".total-game-time").text(get_elapsed_time_string(total));
+	}
 
 
 	// switch between houses and game tabs
